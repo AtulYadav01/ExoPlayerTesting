@@ -52,6 +52,8 @@ class MainActivity : AppCompatActivity(), Player.Listener {
         preparePlayer(randomUrl.first, randomUrl.second)
         exoplayerView.player = simpleExoplayer
         simpleExoplayer.seekTo(playbackPosition)
+        simpleExoplayer.playWhenReady = true
+        simpleExoplayer.addListener(this)
     }
 
     private fun buildMediaSource(uri: Uri, type: String): MediaSource {
