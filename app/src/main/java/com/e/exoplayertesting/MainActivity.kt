@@ -50,8 +50,9 @@ class MainActivity : AppCompatActivity(), Player.Listener {
         simpleExoplayer = SimpleExoPlayer.Builder(this).build()
         val randomUrl = urlList.random()
         preparePlayer(randomUrl.first, randomUrl.second)
+        exoplayerView.player = simpleExoplayer
+        simpleExoplayer.seekTo(playbackPosition)
     }
-
 
     private fun buildMediaSource(uri: Uri, type: String): MediaSource {
         return if (type == "dash") {
