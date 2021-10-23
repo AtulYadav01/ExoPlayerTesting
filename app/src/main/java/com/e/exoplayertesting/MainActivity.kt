@@ -47,7 +47,8 @@ class MainActivity : AppCompatActivity(), Player.Listener {
     }
 
     private fun initializePlayer() {
-       
+        simpleExoplayer = SimpleExoPlayer.Builder(this).build()
+        val randomUrl = urlList.random()
     }
 
 
